@@ -7,14 +7,14 @@ const useStyles = makeStyles({
     }
 })
 
-const NotificationTray = () => {
+const Summary = () => {
     const classes = useStyles()
     return (
         <div className={classes.card}>
             <Card>
                 <CardContent>
                     <Typography variant="subtitle1">
-                        Notifications
+                        Summary
                     </Typography>
                 </CardContent>
             </Card>
@@ -22,4 +22,4 @@ const NotificationTray = () => {
     )
 }
 
-export default NotificationTray
+export default Summary

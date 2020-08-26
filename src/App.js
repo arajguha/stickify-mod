@@ -3,10 +3,9 @@ import Header from './components/Header/Header'
 import Dashboard from './components/Dashboard/Dashboard'
 import { createStore } from 'redux'
 import { Provider } from 'react-redux'
-import { notesReducer } from './store/notesReducer'
+import rootReducer  from './store/rootReducer'
 
-const store = createStore(notesReducer)
-//console.log(store.getState())
+const store = createStore(rootReducer)
 
 const App = () => {
   return (

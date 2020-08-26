@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { TextField, IconButton, Card, CardContent, CardActions, makeStyles } from '@material-ui/core'
 import { AddCircle } from '@material-ui/icons';
-import { addNoteAction } from '../../store/noteActionCreators'
+import { addNoteAction } from '../../store/notes/noteActionCreators'
 import { connect } from 'react-redux'
 import CustomModal from '../UI/CustomModal'
 
@@ -28,8 +28,12 @@ const InputCard = (props) => {
             setModalOpen(true)
         }
         
-        else 
+        else {
             props.addNote(note)
+            setModalMessage('Note has been added')
+            setModalOpen(true)
+            setNote('')
+        }
     }
 
     return (
@@ -75,7 +79,7 @@ const mapDispatchToProps = (dispatch) => {
 
 const mapStateToProps = (state) => {
     return {
-        notes: state
+        notes: state.notes
     }
 }
 

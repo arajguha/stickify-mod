@@ -1,7 +1,7 @@
 import React from 'react'
 import { Grid, makeStyles } from '@material-ui/core'
 import InputCard from './InputCard'
-import NotificationTray from './NotificationTray'
+import NotificationTray from './Summary'
 import NotesList from './NotesList/NotesList'
 
 const useStyles = makeStyles({

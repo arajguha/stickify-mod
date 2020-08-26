@@ -18,8 +18,8 @@ const NotesList = (props) => {
     )
 }
 
-const mapStateToProps = (notes) => ({
-    notes: notes
+const mapStateToProps = (state) => ({
+    notes: state.notes
 })
 
 export default connect(mapStateToProps)(NotesList)
