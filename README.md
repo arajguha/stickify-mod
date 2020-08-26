@@ -1,3 +1,5 @@
-### stickify-mod
+### stickify app (under continuous development)
 #### react, redux, react hooks, material-ui
-##### update and addition to stickify-react-app project
+##### sticky notes app built using modern react stack
+#### hosted in netlify: stickify.netlify.app
+
