@@ -13,7 +13,7 @@ const CustomModal = (props) => {
                 <DialogTitle id="alert-dialog-title">Stickify Alert</DialogTitle>
                 <DialogContent>
                 <DialogContentText id="alert-dialog-description" style={{fontWeight: 'bold'}}>
-                    Invalid Note
+                    {props.message}
                 </DialogContentText>
                 </DialogContent>
                 <DialogActions>

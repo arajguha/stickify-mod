@@ -19,14 +19,17 @@ const InputCard = (props) => {
     const classes = useStyles()
     const [note, setNote] = useState('')
     const [modalOpen, setModalOpen] = useState(false)
+    const [modalMessage, setModalMessage] = useState('')
 
     const handleSubmit = (e) => {
         e.preventDefault()
         if(!note || note.trim() === '') {
+            setModalMessage('Invalid Note')
             setModalOpen(true)
         }
         
-        else props.addNote(note)
+        else 
+            props.addNote(note)
     }
 
     return (
@@ -56,7 +59,8 @@ const InputCard = (props) => {
             </form>
             <CustomModal
                 open={modalOpen}
-                handleClose={() => setModalOpen(false)} 
+                handleClose={() => setModalOpen(false)}
+                message={modalMessage} 
             />
         </div>
             
@@ -69,4 +73,10 @@ const mapDispatchToProps = (dispatch) => {
     }
 }
 
-export default connect(null, mapDispatchToProps)(InputCard)
+const mapStateToProps = (state) => {
+    return {
+        notes: state
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(InputCard)
