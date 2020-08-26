@@ -3,5 +3,20 @@ const initialState = {
 }
 
 export const summaryReducer = (state=initialState, action) => {
-    return state
+    switch(action.type) {
+        case 'INCREMENT_TOTAL_NOTES':
+            return {
+                ...state,
+                totalNotes: state.totalNotes + 1
+            }
+
+        case 'DECREMENT_TOTAL_NOTES':
+            return {
+                ...state,
+                totalNotes: state.totalNotes - 1
+            }
+
+        default: 
+            return state
+    }
 }

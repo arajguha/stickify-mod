@@ -1,7 +1,12 @@
 
-export const updateTotalNotes = (count) => {
+export const incrementTotalNotes = () => {
     return {
-        type: 'UPDATE_TOTAL_SUMMARY',
-        payload: count
+        type: 'INCREMENT_TOTAL_NOTES',
+    }
+}
+
+export const decrementTotalNotes = () => {
+    return {
+        type: 'DECREMENT_TOTAL_NOTES'
     }
 }

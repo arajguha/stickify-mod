@@ -3,12 +3,14 @@ import { Card, CardContent, Grid, Typography, CardActions, IconButton } from '@m
 import { Delete as DeleteIcon } from '@material-ui/icons'
 import { deleteNoteAction } from '../../../../store/notes/noteActionCreators'
 import { connect } from 'react-redux'
+import { decrementTotalNotes } from '../../../../store/summary/summaryActionCreators'
 
 const NoteCard = (props) => {
     
     const handleDelete = (id) => {
         //add additional logic if needed
         props.deleteNote(id)
+        props.updateTotalNotes()
     }
 
     return (
@@ -31,9 +33,11 @@ const NoteCard = (props) => {
     )
 }
 
+
 const mapDispatchToProps = dispatch => {
     return {
-        deleteNote: id => dispatch(deleteNoteAction(id))
+        deleteNote: id => dispatch(deleteNoteAction(id)),
+        updateTotalNotes: () => dispatch(decrementTotalNotes())
     }
 }
 

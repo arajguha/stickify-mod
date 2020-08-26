@@ -4,6 +4,7 @@ import { AddCircle } from '@material-ui/icons';
 import { addNoteAction } from '../../store/notes/noteActionCreators'
 import { connect } from 'react-redux'
 import CustomModal from '../UI/CustomModal'
+import { incrementTotalNotes } from '../../store/summary/summaryActionCreators'
 
 const useStyles = makeStyles({
     button: {
@@ -30,6 +31,7 @@ const InputCard = (props) => {
         
         else {
             props.addNote(note)
+            props.updateTotalNotes()
             setModalMessage('Note has been added')
             setModalOpen(true)
             setNote('')
@@ -73,13 +75,15 @@ const InputCard = (props) => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        addNote: (note) => dispatch(addNoteAction(note)) 
+        addNote: (note) => dispatch(addNoteAction(note)),
+        updateTotalNotes: () => dispatch(incrementTotalNotes()) 
     }
 }
 
 const mapStateToProps = (state) => {
     return {
-        notes: state.notes
+        notes: state.notes,
+        summary: state.summary
     }
 }
 
