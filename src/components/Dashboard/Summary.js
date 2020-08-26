@@ -11,7 +11,7 @@ const useStyles = makeStyles({
 
 const Summary = (props) => {
     const classes = useStyles()
-    const bull = <span style={{padding: '3px'}}>•</span>;
+    const bull = <span style={{padding: '3px'}}>•</span>
     return (
         <div className={classes.card}>
             <Card>
