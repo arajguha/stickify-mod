@@ -14,7 +14,7 @@ const EditModal = (props) => {
     //componentDidMount
     useEffect(() => {
         setFormText(props.text)
-    }, [])
+    }, [props.text])
 
     const handleChange = (e) => {
         setFormText(e.target.value)   
