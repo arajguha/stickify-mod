@@ -4,8 +4,8 @@ import { connect } from 'react-redux'
 
 const useStyles = makeStyles({
     card: {
-        alignItems: 'left',
-        padding: '5px'
+        textAlign: 'left',
+        padding: '3px'
     }
 })
 
@@ -16,7 +16,7 @@ const Summary = (props) => {
         <div className={classes.card}>
             <Card>
                 <CardContent>
-                    <Typography variant="h6" color="secondary">
+                    <Typography variant="h6" color="secondary" style={{fontWeight: 'bold'}}>
                         Summary
                     </Typography>
                     <hr />
