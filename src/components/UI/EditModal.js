@@ -20,7 +20,7 @@ const EditModal = (props) => {
         setFormText(e.target.value)   
     }
     const handleSubmit = () => {
-        console.log('form edited')
+        //console.log('form edited')
         //update the note in store
         props.updateNote(props.id, formText)
         props.handleClose()
@@ -46,7 +46,7 @@ const EditModal = (props) => {
                     <Button onClick={handleCancel} color="secondary">
                         Cancel
                     </Button>
-                    <Button onClick={handleSubmit} color="secondary">
+                    <Button onClick={handleSubmit} color="secondary" variant="contained">
                         Save
                     </Button>
                 </DialogActions>

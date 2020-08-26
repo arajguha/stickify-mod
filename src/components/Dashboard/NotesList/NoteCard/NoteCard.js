@@ -9,10 +9,10 @@ import EditModal from '../../../UI/EditModal'
 
 const useStyles = makeStyles({
     card: {
-        textAlign: 'center',
+        textAlign: 'center'
     },
-    cardActions: {
-        alignItems: 'center'
+    button: {
+        margin: 'auto'
     }
 })
 
@@ -20,16 +20,15 @@ const useStyles = makeStyles({
 const NoteCard = (props) => {
     const classes = useStyles()
 
-    const [editModaOpen, setEditModalOpen] = useState(false)
+    const [editModalOpen, setEditModalOpen] = useState(false)
 
     const handleDelete = (id) => {
-        //add additional logic if needed
         props.deleteNote(id)
         props.updateTotalNotes()
+        
     }
 
     const handleEdit = () => {
-        console.log('edit window opened')
         setEditModalOpen(true)
     }
 
@@ -42,17 +41,21 @@ const NoteCard = (props) => {
                             {props.text}
                         </Typography>
                     </CardContent>
-                    <CardActions className={classes.cardActions}>
-                        <IconButton onClick={() => handleDelete(props.id)}>
+                    <CardActions>
+                        <div style={{margin: 'auto'}}>
+                        <IconButton className={classes.button} onClick={() => handleDelete(props.id)}>
                             <DeleteIcon color="secondary"/>
                         </IconButton>
-                        <IconButton onClick={handleEdit}>
+                        <IconButton className={classes.button} onClick={handleEdit}>
                             <EditIcon color="secondary"/>
                         </IconButton>
+                        </div>
                     </CardActions>
                 </Card>
             </Grid>
-            <EditModal open={editModaOpen} handleClose={() => setEditModalOpen(false)} text={props.text} id={props.id} />
+            
+            <EditModal open={editModalOpen} handleClose={() => setEditModalOpen(false)} text={props.text} id={props.id} />
+            
         </>
     )
 }
