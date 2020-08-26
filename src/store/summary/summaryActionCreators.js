@@ -1,7 +1,7 @@
 
 export const incrementTotalNotes = () => {
     return {
-        type: 'INCREMENT_TOTAL_NOTES',
+        type: 'INCREMENT_TOTAL_NOTES'
     }
 }
 
