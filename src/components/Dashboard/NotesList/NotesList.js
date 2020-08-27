@@ -6,7 +6,7 @@ import { connect } from 'react-redux'
 const NotesList = (props) => {
     let noteCards = (
         <Typography variant="h5" color="secondary" style={{margin: 'auto'}}>
-            start creating small sticky notes...
+            create small stickies...
         </Typography>
     )
     if(props.notes.length !== 0)
