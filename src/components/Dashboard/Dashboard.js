@@ -1,7 +1,7 @@
 import React from 'react'
 import { Grid, makeStyles } from '@material-ui/core'
 import InputCard from './InputCard'
-import NotificationTray from './Summary'
+import Summary from './Summary'
 import NotesList from './NotesList/NotesList'
 
 const useStyles = makeStyles({
@@ -22,7 +22,7 @@ const Dashboard = () => {
                     <InputCard />
                 </Grid>
                 <Grid item xs={6} sm={4}>
-                    <NotificationTray />
+                    <Summary />
                 </Grid>
             </Grid>
             <NotesList />
