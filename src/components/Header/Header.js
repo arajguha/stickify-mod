@@ -37,7 +37,7 @@ const Header = () => {
                         It is written using 
                         React hooks and the react material-ui library. It is not integrated with a database in the backend.
                         The application state is managed using Redux store. Deployed using netlify.
-                        The source code is available on 
+                        The source code is available on  
                         <a href="https://github.com/arajguha/stickify-mod" target="_blank" rel="noopener noreferrer">Github</a>
                     </Typography>
                 </DialogContent>
