@@ -23,7 +23,11 @@ const useStyles = makeStyles({
     },
     button: {
         margin: 'auto'
-    }
+    },
+    pinnedBackground: {
+        textAlign: 'center',
+        backgroundColor: '#FAEBD7'
+    } 
 })
 
 const NoteCard = (props) => {
@@ -49,10 +53,12 @@ const NoteCard = (props) => {
         props.pinNote(props.id)
     }
 
+    const cardClass = props.pinned ? 'pinnedBackground' : 'card'
+
     return (
         <>
             <Grid item xs={12} sm={4}>
-                <Card className={classes.card}>
+                <Card className={classes[cardClass]}>
                     <CardContent>
                         <Typography variant="subtitle1" color="secondary">
                             {props.text}
