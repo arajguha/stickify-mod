@@ -9,8 +9,12 @@ const NotesList = (props) => {
             create small stickies...
         </Typography>
     )
-    if(props.notes.length !== 0)
+    if(props.notes.length !== 0){
         noteCards = props.notes.map(note => <NoteCard key={note.id} id={note.id} text={note.content} pinned={note.pinned} />)
+        const pinnedNotes = noteCards.filter(note => note.props.pinned)
+        const unpinnedNotes = noteCards.filter(note => !note.props.pinned)
+        noteCards = [...pinnedNotes, ...unpinnedNotes]
+    }
     return (
         <Grid container spacing={3}>
             {noteCards}
