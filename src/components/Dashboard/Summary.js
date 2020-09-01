@@ -23,6 +23,9 @@ const Summary = (props) => {
                     <Typography variant="subtitle1" color="secondary">
                         {bull}Total Notes : {props.summary.totalNotes}
                     </Typography>
+                    <Typography variant="subtitle1" color="secondary">
+                        {bull}Pinned notes : {props.summary.pinned}
+                    </Typography>
                 </CardContent>
             </Card>
         </div>

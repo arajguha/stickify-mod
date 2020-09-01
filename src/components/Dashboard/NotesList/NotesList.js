@@ -10,7 +10,7 @@ const NotesList = (props) => {
         </Typography>
     )
     if(props.notes.length !== 0)
-        noteCards = props.notes.map(note => <NoteCard key={note.id} id={note.id} text={note.content} />)
+        noteCards = props.notes.map(note => <NoteCard key={note.id} id={note.id} text={note.content} pinned={note.pinned} />)
     return (
         <Grid container spacing={3}>
             {noteCards}

@@ -19,3 +19,10 @@ export const updateNoteAction = (id, newText) => {
         payload: {id, newText}
     }
 }
+
+export const pinNote = (id) => {
+    return {
+        type: 'PIN_NOTE',
+        id
+    }
+}
