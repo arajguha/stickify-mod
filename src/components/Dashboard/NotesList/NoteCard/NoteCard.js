@@ -66,13 +66,13 @@ const NoteCard = (props) => {
                     </CardContent>
                     <CardActions>
                         <div style={{margin: 'auto'}}>
-                        <IconButton className={classes.button} onClick={() => handleDelete(props.id)}>
+                        <IconButton className={classes.button} title="delete" onClick={() => handleDelete(props.id)}>
                             <DeleteIcon color="secondary"/>
                         </IconButton>
-                        <IconButton className={classes.button} onClick={handleEdit}>
+                        <IconButton className={classes.button} title="edit" onClick={handleEdit}>
                             <EditIcon color="secondary"/>
                         </IconButton>
-                        <IconButton onClick={() => togglePin(props.id)}>
+                        <IconButton title="pin" onClick={() => togglePin(props.id)}>
                             { props.pinned ? <LabelIcon color="secondary" /> : <LabelOutlinedIcon color="secondary" /> }
                         </IconButton>
                         </div>
